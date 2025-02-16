@@ -2,5 +2,11 @@
   "dependencies": {
     "json": "^11.0.0",
     "sse": "^0.0.8"
+  },
+  "scripts": {
+    "obfuscate": "javascript-obfuscator src/js --output static/js"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.1.1"
   }
 }

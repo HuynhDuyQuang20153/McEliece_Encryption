@@ -1,3 +1,6 @@
+# python app.py     (để chạy chương trình)
+# npm run obfuscate (để làm rối mã js)
+
 from flask import Flask, request, redirect, render_template, send_file
 from flask_sse import sse
 from controller import *
