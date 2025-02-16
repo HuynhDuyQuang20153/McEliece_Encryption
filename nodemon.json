@@ -1,0 +1,4 @@
+{
+    "ext": "py",
+    "exec": "python app.py"
+  }

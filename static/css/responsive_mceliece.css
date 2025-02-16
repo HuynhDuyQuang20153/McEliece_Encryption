@@ -1,0 +1,808 @@
+:root{
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+
+@media (max-width: 1200px) {
+    html{
+        font-size: 55%;
+    }
+
+    .navbar a{
+        font-size: 2.3rem;
+    }
+
+    .header,
+    section{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .home-content h1{
+        font-size: 4rem;
+        line-height: 1.2;
+    }
+    
+    .home-content .text-animate{
+        width: 90%;
+    }
+
+    .home-content{
+        margin-bottom: 20px;
+    }
+
+    .animate{
+        height: 104%;
+    }
+
+    .animate.abc{
+        top: -3px;
+        right: -3px;
+    }
+
+    .team .animate{
+        top: -1px;
+        right: -1px;
+        width: 103%;
+        height: 103%;
+    }
+
+    .model_mceliece{
+        top: 15rem;
+        width: 80rem;
+    }
+
+    .mceliece .mceliece-left{
+        width: 70%;
+    }
+
+    .mceliece .mceliece-right{
+        width: 29%;
+    }
+
+    .mceliece-right .content .file_name .download_file{
+        bottom: 1.2rem;
+        right: 2rem;
+    }
+
+    .mceliece-right .content span.datetime{
+        font-size: 2rem;
+    }
+
+    .mceliece-right .content .notify{
+        font-size: 2.2rem;
+    }
+
+    .mceliece-right .content .file_name{
+        font-size: 2rem;
+    }
+
+    .mceliece-right .content .file_name .download_file a{
+        font-size: 1.9rem;
+    }
+}
+
+
+/*990*/
+@media (max-width: 991px) {
+    .header{
+        padding: 2rem 4%;
+    }
+
+    section{
+        padding: 10rem 4% 2rem;
+    }
+
+    .home{
+        padding: 10rem 4%;
+    }
+
+    .heading{
+        font-size: 3.5rem;
+    }
+
+    .home .animate{
+        top: 0px;
+        right: -1px;
+        width: 102%;
+        height: 105%;
+    }
+
+    .home-content{
+        margin-bottom: 30px;
+    }
+
+    .home-content .text-animate{
+        width: 107%;
+    }
+
+    .home-content h1{
+        font-size: 3.5rem;
+        line-height: 1.2;
+    }
+
+    .team{
+        padding-bottom: 5rem;
+    }
+
+    .team .animate{
+        top: -1px;
+        right: -1px;
+        width: 101%;
+        height: 101%;
+    }
+
+    .team-row .team-col{
+        width: 40%;
+    }
+
+    .footer{
+        padding: 2rem 4%;
+    }
+
+    .mceliece{
+        flex-wrap: wrap;
+        gap: 3%;
+    }
+
+    .mceliece .mceliece-left{
+        width: 100%;
+        height: 65%;
+    }
+
+    .mceliece h1{
+        font-size: 2.6rem;
+    }
+
+    .encrypt form{
+        padding: 0 30px;
+    }
+
+    .click{
+        margin-top: 3.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .encrypt input{
+        margin: 0;
+        padding: 7px 10px;
+    }
+
+    .side-container button{
+        padding: .8rem 2.5rem;
+    }
+
+    .side-container button{
+        margin-top: 0;
+        font-size: 1.6rem;
+    }
+
+    .mceliece .mceliece-right{
+        width: 100%;
+        height: 34%;
+        display: flex;
+        flex-direction: row;
+        gap: 1.5%;
+    }
+
+    .mceliece .mceliece-right .top,
+    .mceliece .mceliece-right .bottom{
+        height: 100%;
+    }
+
+    .show-img{
+        top: 0;
+    }
+
+    .model_mceliece{
+        top: 18rem;
+        width: 70rem;
+    }
+
+    .model_mceliece .close{
+        top: -15px;
+        right: -15px;
+    }
+
+    .model_mceliece .close i{
+        font-size: 4rem;
+    }
+
+    .mceliece-right .content .area_1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+
+    .mceliece-right .content .notify{
+        margin: 0 0 0rem 0;
+        font-size: 1.9rem;
+    }
+
+    .mceliece-right .content .file_name{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        margin-top: .5rem;
+    }
+
+    .mceliece-right .content .file_name .filename_left{
+        width: 70%;
+    }
+
+    .mceliece-right .content .file_name .filename_left p{
+        margin-right: 2rem;
+    }
+
+    .mceliece-right .content .file_name .download_file{
+        position: relative;
+        width: 28%;
+        margin: auto;
+        bottom: 0;
+        right: 0;
+        padding: .5rem 0rem;
+        background: rgba(0, 171, 240, 0.5);
+        border-radius: 10px;
+    }
+
+    .mceliece-right .content .file_name .download_file a{
+        color: var(--text-color);
+        font-size: 1.8rem;
+    }
+
+    .animate.abc{
+        top: -3px;
+        right: -3px;
+    }
+
+}
+
+
+/*768*/
+@media (max-width: 768px) {
+    .header{
+        background: var(--bg-color);
+    }
+
+    .home-content .text-animate{
+        width: 103%;
+    }
+
+    .encrypt form{
+        padding-top: 2rem;
+    }
+
+    .click{
+        display: block;
+        margin-top: 2rem;
+    }
+
+    .click .row-mc{
+        margin-top: 1.8rem;
+    }
+
+    .mceliece-right .content .area_1{
+        flex-direction: column;
+    }
+
+    .mceliece-right .content span.datetime {
+        font-size: 1.9rem;
+    }
+
+    .mceliece-right .content .area_1 .notify{
+        font-size: 1.9rem;
+    }
+
+    .mceliece-right .content .file_name{
+        margin-top: 0rem;
+    }
+
+    .mceliece-right .content .file_name .filename_left{
+        width: 100%;
+    }
+
+    .mceliece-right .content .file_name .filename_left p{
+        margin-right: 0rem;
+    }
+
+    .mceliece-right .content .file_name .download_file{
+        position: absolute;
+        width: 100%;
+        background: transparent;
+        bottom: -3.5rem;
+        right: 0rem;
+        padding: 0rem;
+    }
+
+    .mceliece-right .content .file_name .download_file a{
+        color: var(--main-color);
+        justify-content: right;
+    }
+
+    .mceliece .mceliece-right{
+        height: 45%;
+    }
+
+    .alt_img{
+        display: none;
+    }
+    
+    .model_mceliece{
+        top: 20rem;
+        width: 60rem;
+    }
+
+    span.hide-text{
+        display: none;
+    }
+
+    .home-content{
+        width: 80%;   
+    }
+
+    .home .animate{
+        top: 0px;
+        height: 105%;
+    }
+
+    .animate.abc{
+        top: -3px;
+        right: -3px;
+    }
+
+    .team{
+        padding-bottom: 5rem;
+    }
+
+    .team .animate{
+        top: -1px;
+        right: -1px;
+        width: 101%;
+        height: 102%;
+    }
+
+    .team .team-row{
+        gap: 4%;
+    }
+
+    .team-row .team-col{
+        width: 48%;
+    } 
+}
+
+
+/*520*/
+@media (max-width: 520px) {
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 3.5rem;
+    }
+
+    .home-content .text-animate{
+        width: 100%;
+    }
+
+    .home-content h1{
+        font-size: 3.3rem;
+        line-height: 1.2;
+    }
+
+    .home-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-content .text-animate{
+        width: 90%;
+    }
+
+    .mceliece {
+        height: 100vh;  
+    }
+    .mceliece .mceliece-left{
+        position: relative;
+        width: 100%;
+        height: 66%;
+    }
+
+    .mceliece .mceliece-right{
+        position: relative;
+        width: 100%;
+        height: 34%;
+        gap: 2%;
+    }
+
+    .mceliece .mceliece-left .side-right{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0rem;        
+    }
+
+    .mceliece .mceliece-left .side-left{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        top: 0rem;
+    }
+
+    .click{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .click .row-mc{
+        margin-top: 0;
+    }
+
+    .encrypt form{
+        padding-top: 0;
+    }
+
+    #encrypt form span{
+        font-size: 2rem;
+    }
+
+    .side-container button{
+        padding: 1.2rem 2.5rem;
+    }
+
+    .side-container button{
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+
+    .encrypt .side-left form{
+        border-radius: 20px 20px 0 0;
+    }
+
+    .mceliece-right .content .file_name{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mceliece .mceliece-right{
+        display: flex;
+        flex-direction: column;
+        gap: 8%;
+    }
+
+    .mceliece-right .content .area_1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .mceliece-right .content span.datetime{
+        font-size: 2.1rem;
+    }
+
+    .mceliece-right .content .area_1 .notify {
+        font-size: 2.1rem;
+    }
+
+    .mceliece-right .content .file_name .filename_left{
+        width: 70%;
+        margin: 1rem 0 1.5rem 0;
+    }
+
+    .mceliece-right .content .file_name .filename_left p{
+        margin-right: 2rem;
+    }
+
+    .mceliece-right .content .file_name .download_file{
+        position: relative;
+        width: 26%;
+        margin: auto;
+        bottom: 0;
+        right: 0;
+        padding: .5rem 0;
+        background: rgba(0, 171, 240, 0.5);
+        border-radius: 30px;
+    }
+
+    .mceliece-right .content .file_name .download_file a{
+        color: var(--text-color);
+        justify-content: center;
+    }
+
+    .model_mceliece{
+        width: 75%;
+    }
+
+    .navbar a{
+        font-size: 2rem;
+    }
+
+    .team .team-row{
+        gap: 0;
+    }
+
+    .team-row .team-col{
+        width: 70%;
+        margin-bottom: 40px;
+    } 
+
+    .team-content .content .team-image{
+        margin: 3rem 0rem 3rem;
+    }
+
+    .team-content .content .team-image img{
+        width: 55%;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .infor-student{
+        margin-bottom: 2rem;
+    }
+
+    .team-content .content .mssv{
+        font-size: 2.3rem;
+    }
+
+    .team-content .content .infor-student p{
+        font-size: 1.8rem;
+    }
+}
+
+
+/*461*/
+@media (max-width: 462px) {
+    .navbar a{
+        font-size: 2rem;
+    }
+
+    .home-content .text-animate{
+        width: 108%;
+    }
+
+    .home-content h1{
+        font-size: 3rem;
+    }
+
+    .home .animate{
+        height: 105%;
+    }
+
+    .mceliece-right .content span.datetime,
+    .mceliece-right .content .area_1 .notify {
+        font-size: 1.9rem;
+    }
+
+    .mceliece-right .content .file_name .download_file a {
+        font-size: 1.7rem;
+    }
+
+    .team{
+        padding: 10rem 0% 5rem;
+    }
+
+    .team-content .content .team-image img{
+        width: 65%;
+    }
+
+    .team-row .team-col{
+        width: 70%;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+    .infor-student p{
+        font-size: 3rem;
+    }
+
+    .footer{
+        flex-direction: column-reverse; 
+    }
+
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+
+/*370*/
+@media (max-width: 371px) {
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transition: .25s ease;
+        transition-delay: .25s;
+        z-index: 1;
+    }
+
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav{
+        transition-delay: .25s;
+        left: 0;
+    }
+
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar a{ 
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+    }
+
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .home{
+        justify-content: center;
+    }
+
+    .home-content{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .home-content h1{
+        font-size: 3rem;
+    }
+
+    .home-content .text-animate{
+        display: none;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+    .model_mceliece{
+        width: 80%;
+    }
+
+    .model_mceliece .close{
+        top: -15px;
+        right: -15px;
+    }
+
+    .side-container button{
+        padding: 1.2rem 1.5rem;
+    }
+
+    .mceliece-right .content .area_1{
+        flex-direction: column;
+    }
+
+    .mceliece-right .content .area_1 .notify{
+        font-size: 1.9rem;
+    }
+
+    .mceliece-right .content{
+        position: relative;
+    }
+
+    .mceliece-right .content .file_name{
+        height: 11rem;
+    }
+
+    .mceliece-right .content .file_name .filename_left{
+        width: 100%;
+    }
+
+    .mceliece-right .content .file_name .filename_left p{
+        margin-right: 0rem;
+    }
+
+    .mceliece-right .content .file_name .download_file{
+        position: absolute;
+        width: 100%;
+        background: transparent;
+        bottom: 1rem;
+        right: 0rem;
+        padding: 0rem;
+    }
+
+    .mceliece-right .content .file_name .download_file a{
+        color: var(--main-color);
+        justify-content: right;
+    }
+
+    .team{
+        margin-top: 15rem;
+    }
+
+    .team-row .team-col{
+        width: 80%;
+        margin-bottom: 40px;
+    } 
+
+    .team-content .content .infor-student p{
+        font-size: 1.6rem;
+    }
+
+    .team-content .content .mssv{
+        font-size: 2rem;
+    }
+}
+
+
+
+/*------------ANIMATION-----------*/
+@keyframes homeBgText{
+    0%,
+    10%,
+    100%{
+        background-position: -65rem 0;
+    }
+
+    65%,
+    85%{
+        background-position: 0 0;
+    }
+}
+
+@keyframes showRight{
+    100%{
+        width: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes Spinner{
+    100%{
+        transform: rotate(360deg);
+    }
+}

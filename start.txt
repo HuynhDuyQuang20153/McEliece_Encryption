@@ -1,0 +1,15 @@
+nhập "nodemon"
+
+
+*** nếu không chạy được thì:
+pip freeze > requirements.txt
+
+*** hoặc cài thủ công từng module:
+1. cài npm
+2. cài nodemon
+3. cài pip install flask
+4. pip install flask-sse
+5. pip install numpy
+6. pip install joblib
+7. pip install pandas
+8. pip install scikit-learn

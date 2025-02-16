@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+    --success-color: #4ed14e;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ------------------------------ HEADER ------------------------------ */
+.header .logo img{
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky{
+    background: var(--bg-color);
+}
+
+.logo{
+    position: relative;
+    display: flex;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 10;
+}
+
+.animate.abc{
+    top: -2px;
+    right: -2px;
+    width: 103%;
+    height: 103%;
+}
+
+.animate.scroll{
+    transition: .5s ease;
+    transition-delay: calc(.2s / var(--i));
+    animation: none;
+}
+
+.team .team-box .animate.scroll{
+    width: 105%;
+}
+
+.team.show-animate .animate.scroll,
+.footer.show-animate .animate.scroll{
+    transition-delay: calc(.2s * var(--i));
+    width: 0;
+}
+
+.mceliece-right .animate_mc,
+.mceliece-left .animate_mc,
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home.show-animate .animate{
+    animation: showRight .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar{
+    position: relative;
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+
+#menu-icon{
+    position: relative;
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+/* ------------------------------ SECTION HOME ------------------------------ */
+section{
+    height: auto;
+    padding: 8rem 5% 5rem;
+}
+
+.home{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.mceliece{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    display: flex;
+    gap: 1%;
+}
+
+.mceliece .mceliece-left{
+    position: relative;
+    display: inline-block;
+    width: 75%;
+    border-radius: 20px;
+    border: .2rem dashed rgba(0, 171, 240, 0.5);
+    background: transparent;
+}
+
+.load_result{
+    display: none;
+}
+
+.load_result i{
+    font-size: 1.5rem;
+    color: var(--second-bg-color);
+    animation: Spinner 1s linear infinite;
+}
+
+#process_2.load_result i{
+    color: var(--text-color);
+}
+
+.mceliece .mceliece-right{
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+}
+
+.mceliece .mceliece-right .top,
+.mceliece .mceliece-right .bottom{
+    width: 100%;
+    height: 48%;
+    border-radius: 20px;
+}
+
+.mceliece .mceliece-right .top{
+    background: transparent;
+    border: .2rem dashed rgba(0, 171, 240, 0.5);
+}
+
+.mceliece .mceliece-right .bottom{
+    background: transparent;
+    border: .2rem dashed rgba(0, 171, 240, 0.5);
+}
+
+.home-content h1{
+    position: relative;
+    display: inline-block;
+    font-size: 4.6rem;
+    line-height: 1.4;
+}
+
+.home-content .text-animate{
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content .text-animate h3{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: transparent;    
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -65rem 0 ;
+    animation: homeBgText 3s linear infinite;
+    animation-delay: 1s;
+} 
+
+.heading{
+    position: relative;
+    display: inline-block;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+span{
+    color: var(--main-color);
+}
+
+
+/* ------------------------------ SECTION TEAM ------------------------------ */
+.team{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+.team .team-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.team-row .team-col{
+    width: 30%;
+    height: auto;
+}
+
+.team-box{
+    position: relative;
+    display: inline-block;
+}
+
+.team-content{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.team-content .content{
+    position: relative;
+    width: 100%;
+    padding: 3rem 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
+
+.team-content .content .team-image{
+    margin: 1rem 0rem 2rem;
+}
+
+.team-content .content .team-image img{
+    width: 35%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.team-content .content .mssv{
+    font-size: 1.8rem;
+    color: var(--main-color);
+    padding: .5rem;
+}
+
+.team-content .content .mssv i{
+    padding-right: .5rem;
+}
+
+.team-content .content h3{
+    font-size: 2.4rem;
+}
+
+.team-content .content .infor-student{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-content .content .infor-student p{
+    font-size: 1.7rem;
+    padding-top: .5rem;
+}
+
+.team-content .content .infor-student p a{
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.team-content .content .infor-student p a:hover{
+    color: var(--main-color);
+}
+
+
+/* ------------------------------ FOOTER ------------------------------ */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-text,
+.footer-iconTop{
+    position: relative;
+}
+
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+}
+
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
+
+/* ------------------------------ MCELIECE LEFT ------------------------------ */
+.encrypt {
+    margin-bottom: 30px;
+	position: relative;
+    display: inline-block;
+	width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.side-container h1{
+    font-size: 3rem;
+    font-weight: bold;
+	margin: 0rem 0rem 1.5rem;
+}
+
+.side-container{
+	position: absolute;
+	height: 100%;
+}
+
+.side-container span{
+    font-size: 16px;
+}
+
+.encrypt input {
+	border: none !important;
+	padding: 12px 15px;
+	margin: 2rem 0;
+	width: 100%;
+	outline: none !important;
+	border-radius: 20px;
+}
+
+.encrypt .side-left{
+    left: 0;
+    width: 50%;
+}
+
+.show-img{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    height: 5rem;
+    border-radius: 10px;
+    padding: .2rem;
+    margin: .8rem;
+    border: .2rem dashed rgba(0, 171, 240, 0.5);
+    cursor: pointer;
+}
+
+.show-img i{
+    width: 100%;
+    height: 100%;
+    font-size: 4.3rem;
+}
+
+.alt_img{
+    font-size: 1.6rem;
+    padding: .5rem .5rem .5rem .5rem;
+}
+
+.model_mceliece{
+    position: absolute;
+    top: 12rem;
+    z-index: 100;
+    width: 80rem;
+    height: auto;
+    border-radius: 10px;
+    background: #ffffff;
+    display: none;
+}
+
+.model_mceliece.show{
+    animation: fade-in .5s ease-in-out; 
+}
+
+.model_mceliece .close{
+    position: absolute;
+    top: -26px;
+    right: -26px;
+    background: var(--bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.model_mceliece .close i{
+    font-size: 5rem;
+    font-weight: 700;
+    border: .2rem solid rgba(0, 171, 240, 0.5);
+    border-radius: 10px;
+}
+
+.model_mceliece img{
+    padding: 4rem;
+    width: 100%;
+    height: auto;
+}
+
+#hide-bg{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 30;
+    opacity: 0.8;
+}
+
+.encrypt .side-right{
+	right: 0;
+	width: 50%;
+}
+
+.side-container button {
+	border-radius: 20px;
+	background-color:#eeeeee;
+	color: var(--main-color);
+	font-size: 1.5rem;
+	border: none !important;
+	font-weight: bold;
+	padding: 1rem 3rem;
+	/* letter-spacing: 1px; */
+	/* text-transform: uppercase; */
+	transition: transform 80ms ease-in;
+    cursor: pointer;
+	margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none !important; 
+	border: none !important;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+.encrypt form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.encrypt .side-left form {
+    background: var(--second-bg-color);
+    /* background: #1C1D24; */
+}
+
+.encrypt .side-left input,
+.encrypt .side-left buton {
+	background-color: #ffffff;
+	color: var(--second-bg-color);
+}
+
+.encrypt .side-right input,
+.encrypt .side-right button {
+    background: var(--second-bg-color);
+	color: white;
+}
+
+#encrypt .side-right form h1,
+#encrypt .side-right form span,
+#encrypt .side-left form h1,
+#encrypt .side-left form span{
+	color: var(--text-color);
+}
+
+#encrypt .side-left form button{
+	color: var(--second-bg-color);
+}
+
+.row-mc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+#error{
+	color: white;
+	font-size: 16;
+	margin-top: 10px;
+}
+
+#spinner,
+#spinner_2{
+    position: absolute;
+    margin: auto;
+	font-size: 1.6rem;
+    bottom: 2.5rem;
+}
+
+#spinner{
+    color: var(--text-color);
+}
+
+#spinner_2{
+    color: var(--text-color);
+}
+
+
+/* ------------------------------ MCELIECE RIGHT ------------------------------ */
+.top,
+.bottom,
+.mceliece-right{
+    position: relative;
+    display: inline-block;
+}
+
+.mceliece-right .content{
+    padding: 1.5rem 2rem 0 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mceliece-right .content .area_1{
+    border-bottom: .2rem dashed rgba(0, 171, 240, 0.5);
+}
+
+.mceliece-right .content span.datetime{
+    font-size: 1.65rem;
+    font-weight: 500;
+}
+
+.mceliece-right .content .notify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin: 0 auto;
+    font-size: 1.9rem;
+    font-weight: 500;
+    color: var(--success-color);
+    margin: 1rem 0;
+}
+
+.mceliece-right .content .notify i{
+    font-weight: 600;
+}
+
+.mceliece-right .content .file_name{
+    font-size: 1.8rem;
+}
+
+.mceliece-right .content .file_name p{
+    position: relative;
+}
+
+.mceliece-right .content .file_name p span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--text-color)
+}
+
+.mceliece-right .content .file_name .download_file{
+    position: absolute;
+    bottom: .8rem;
+    right: 1.6rem;
+}
+
+.mceliece-right .content .file_name .download_file a{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;    
+    color: var(--main-color);
+}
+
+
+
+

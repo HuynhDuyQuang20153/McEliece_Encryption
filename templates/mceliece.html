@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mceliece Encryption System</title>
+    <link rel="stylesheet" href="../static/css/mceliece.css">
+    <link rel="stylesheet" href="../static/css/responsive_mceliece.css">
+    <link rel="icon" href="../static/img/mceliece.png">
+
+    <!-- box icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+    <!--HEADER-->
+    <!-- <header class="header">
+        <a href="" class="logo" onclick="reloadPage()">
+            <img src="../static/img/mceliece.png" alt=""> 
+            Mceliece. 
+            <span class="animate" style="--i:1;"></span>
+        </a> -->
+
+        <!-- <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:1;"></span></div> -->
+
+        <!-- <nav class="navbar">
+            <a href="#McEliece" class="active">McEliece</a>
+            <a href="#team">TeamWork</a>
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav> -->
+    <!-- </header> -->
+
+
+    <!--SECTION DESIGN-->
+    <section class="home show-animate" id="McEliece">
+        <div class="home-content">
+            <h1>Mceliece Encryption System
+                <span class="animate" style="--i:2;"></span>
+            </h1>
+            <div class="text-animate">
+                <h3>Upload your data you want to encrypt/decrypt (Only accept .txt and .xlsx file)</h3>
+                <span class="animate" style="--i:3;"></span>
+            </div>
+
+        </div>   
+
+        <div class="mceliece">
+            <div class="mceliece-left">
+                <div id="encrypt" class="encrypt">
+                    <div class="side-left side-container" id="process__1">
+                        <form action="/cipher" method="post" enctype="multipart/form-data" id="cipher" onsubmit="return submitForm(event)">  
+                            <h1>ENCRYPT DATA</h1>
+                            <span>Upload your original data <span class="hide-text">you want to encrypt</span></span>
+                            <span>(Only accept .txt and .xlsx file)</span>
+                            <div class="click">
+                                <input type="file" name="file" id="file-cipher" accept=".txt, .xlsx">
+                                <div class="row-mc">
+                                    <button type="submit" id="submit-file-original">Encrypt
+                                        <div id="process" class="load_result">
+                                            <i class='bx bx-loader-circle'></i>
+                                        </div>
+                                    </button>                                   
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="show-img" id="show">
+                            <i class='bx bx-image-alt' ></i>
+                            <div class="alt_img">McEliece</div>
+                        </div>
+                    </div>
+    
+                    <div class="side-right side-container">
+                        <form action="/plain" method="post" enctype="multipart/form-data" id="plain" onsubmit="return submitForm_2(event)">   
+                            <h1>DECRYPT DATA</h1>
+                            <span>Upload your cipher data <span class="hide-text">you want to decrypt</span></span>
+                            <span>(Only accept .txt file)</span>
+                            <div class="click">
+                                <input type="file" name="file" accept=".txt" id="file-plain" >
+                                <div class="row-mc">
+                                    <button type="submit" id="submit-file-cipher" >Decrypt
+                                        <div id="process_2" class="load_result">
+                                            <i class='bx bx-loader-circle'></i>
+                                        </div>
+                                    </button>                                 
+                                </div>                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <span class="animate abc" style="--i:3;"></span>
+            </div>
+            
+
+            <div class="mceliece-right" data-animation="fadeInUp" data-delay="900ms">
+                <div class="top">
+                    <div class="content">
+                        <div class="area_1">
+                            <span class="datetime">McEliece - CipherText</span>
+                            <div class="notify" id="notify_cipher">
+                                <!-- <p>Encrypt data success</p> -->
+                                <!-- <i class='bx bx-check-circle'></i> -->
+                            </div>
+                        </div>
+
+                        <div class="file_name" id="add_file_cipher">
+                            <!-- <div class="filename_left">
+                                <p>Input: <span>Ubisoft....nect.txt</span></p>
+                                <p>Output: <span>ciphertext_zip.zip</span></p>                                
+                            </div>
+                            <div class="download_file">
+                                <a href="download-cipher" id="download-cipher">
+                                    <i class='bx bxs-download'></i> Download
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <span class="animate abc" style="--i:4;"></span>
+                </div>
+                
+                <div class="bottom">
+                    <div class="content">
+                        <div class="area_1">
+                            <span class="datetime">McEliece - PlainText</span>
+                            <div class="notify" id="notify_plain">
+                                <!-- <p>Decrypt data success</p> -->
+                                <!-- <i class='bx bx-check-circle'></i> -->
+                            </div>
+                        </div>
+
+                        <div class="file_name" id="add_file_plain">
+                            <!-- <div class="filename_left">
+                                <p>Input: <span>ciphertext_zip.zip</span></p>
+                                <p>Output: <span>Ubisoft....nect_Dec.txt</span></p>                                
+                            </div>
+                            <div class="download_file">
+                                <a href="download-cipher" id="download-cipher">
+                                    <i class='bx bxs-download'></i> Download
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <span class="animate abc" style="--i:4;"></span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="model_mceliece" id="model_mceliece">
+            <img src="../static/img/mo-ta-mc.jpg" alt="Model McEliece">
+            <div class="close" id="hide">
+                <i class='bx bx-x'></i>                
+            </div>
+        </div>
+
+        <span id="hide-bg"></span>
+    </section>
+
+
+    <!--SECTION teamCATION-->
+    <!-- <section class="team" id="team">
+        <h2 class="heading">My <span>TeamWork</span><span class="animate scroll" style="--i:1;"></span></h2>
+
+        <div class="team-row">
+            <div class="team-col">
+                <div class="team-box">
+                    <div class="team-content">
+                        <div class="content">
+                            <div class="team-image">
+                                <img class="team-member-image" src="../static/img/MyPic.jpg" alt="Quang.jpg">
+                            </div>
+                            <h3>Huynh Duy Quang</h3>
+                            <div class="mssv">
+                                <i class='bx bxs-user-account' ></i>19520141
+                            </div>
+                            <div class="infor-student">
+                                <p>Industrial University of Ho Chi Minh City</p>
+                                <p>Faculty of information technology</p>
+                                <p><a href="tel:0824379221"><i class='bx bxs-phone-call'></i>0824 379 221</a></p>
+                                <p><a href="mailto:hdq201contact@gmail.com">
+                                    <i class='bx bx-envelope' ></i>
+                                    hdq201contact@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="animate scroll" style="--i:2;"></span>
+                </div>
+            </div>
+
+            <div class="team-col">
+                <div class="team-box">
+                    <div class="team-content">
+                        <div class="content">
+                            <div class="team-image">
+                                <img class="team-member-image" src="../static/img/thang.jpg" alt="Thang.jpg">
+                            </div>
+                            <h3>Tran Xuan Thang</h3>
+                            <div class="mssv">
+                                <i class='bx bxs-user-account' ></i>19524341
+                            </div>
+                            <div class="infor-student">
+                                <p>Industrial University of Ho Chi Minh City</p>
+                                <p>Faculty of information technology</p>
+                                <p><a href="tel:0366385309"><i class='bx bxs-phone-call'></i>0366 385 309</a></p>
+                                <p><a href="mailto:leethang2001@gmail.com">
+                                    <i class='bx bx-envelope' ></i>
+                                    leethang2001@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="animate scroll" style="--i:3;"></span>
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+
+
+    <!--FOOTER-->
+    <!-- <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 All Rights Reserved</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#McEliece"><i class='bx bxs-chevron-up' ></i></a>
+        </div>
+    </footer> -->
+
+    <script src="../static/js/mceliece.js"></script>
+    <script src="../static/js/encrypt_decrypt.js"></script>
+
+</body>
+</html>
