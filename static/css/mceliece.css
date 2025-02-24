@@ -133,7 +133,7 @@ body{
 /* ------------------------------ SECTION HOME ------------------------------ */
 section{
     height: auto;
-    padding: 8rem 5% 5rem;
+    padding: 8rem 3% 5rem;
 }
 
 .home{
@@ -156,7 +156,7 @@ section{
 .mceliece{
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 380px;
     border-radius: 20px;
     display: flex;
     gap: 1%;
@@ -395,9 +395,8 @@ span{
 }
 
 .side-container h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
-	margin: 0rem 0rem 1.5rem;
 }
 
 .side-container{
@@ -406,13 +405,22 @@ span{
 }
 
 .side-container span{
-    font-size: 16px;
+    font-size: 15px;
+}
+
+.side-container .click{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .encrypt input {
 	border: none !important;
-	padding: 12px 15px;
-	margin: 2rem 0;
+	padding: 6px 15px;
 	width: 100%;
 	outline: none !important;
 	border-radius: 20px;
@@ -430,7 +438,7 @@ span{
     position: absolute;
     bottom: 0;
     width: auto;
-    height: 5rem;
+    height: 4.05rem;
     border-radius: 10px;
     padding: .2rem;
     margin: .8rem;
@@ -441,19 +449,21 @@ span{
 .show-img i{
     width: 100%;
     height: 100%;
-    font-size: 4.3rem;
+    font-size: 3.5rem;
 }
-
+/* 
 .alt_img{
     font-size: 1.6rem;
     padding: .5rem .5rem .5rem .5rem;
-}
+} */
 
 .model_mceliece{
     position: absolute;
-    top: 12rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 100;
-    width: 80rem;
+    width: 70rem;
     height: auto;
     border-radius: 10px;
     background: #ffffff;
@@ -466,22 +476,22 @@ span{
 
 .model_mceliece .close{
     position: absolute;
-    top: -26px;
-    right: -26px;
+    top: -20px;
+    right: -20px;
     background: var(--bg-color);
     border-radius: 10px;
     cursor: pointer;
 }
 
 .model_mceliece .close i{
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     border: .2rem solid rgba(0, 171, 240, 0.5);
     border-radius: 10px;
 }
 
 .model_mceliece img{
-    padding: 4rem;
+    padding: 1rem;
     width: 100%;
     height: auto;
 }
@@ -507,15 +517,12 @@ span{
 	border-radius: 20px;
 	background-color:#eeeeee;
 	color: var(--main-color);
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	border: none !important;
 	font-weight: bold;
-	padding: 1rem 3rem;
-	/* letter-spacing: 1px; */
-	/* text-transform: uppercase; */
+	padding: 1rem 2rem;
 	transition: transform 80ms ease-in;
     cursor: pointer;
-	margin-top: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -539,12 +546,13 @@ button.ghost {
 .encrypt form {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 50px;
 	height: 100%;
 	text-align: center;
     border-radius: 20px 0px 0px 20px;
+    gap: 10px;
 }
 
 .encrypt .side-left form {
@@ -553,7 +561,7 @@ button.ghost {
 }
 
 .encrypt .side-left input,
-.encrypt .side-left buton {
+.encrypt .side-left button {
 	background-color: #ffffff;
 	color: var(--second-bg-color);
 }
@@ -565,10 +573,18 @@ button.ghost {
 }
 
 #encrypt .side-right form h1,
-#encrypt .side-right form span,
+.encrypt .side-right form span,
 #encrypt .side-left form h1,
-#encrypt .side-left form span{
+.encrypt .side-left form span{
 	color: var(--text-color);
+}
+.side-container .click .box_notify_error.show .error_detail{
+    color: red;
+    font-size: 1.5rem;
+}
+.side-container .click .box_notify_error.show .error_detail.success_notify{
+    color: rgb(255,255,0);
+    font-size: 1.7rem;
 }
 
 #encrypt .side-left form button{
@@ -616,7 +632,7 @@ button.ghost {
 }
 
 .mceliece-right .content{
-    padding: 1.5rem 2rem 0 2rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
     width: 100%;
     height: 100%;
     display: flex;
@@ -639,10 +655,10 @@ button.ghost {
     align-items: center;
     gap: .5rem;
     margin: 0 auto;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     font-weight: 500;
     color: var(--success-color);
-    margin: 1rem 0;
+    margin: .5rem 0 1rem 0;
 }
 
 .mceliece-right .content .notify i{

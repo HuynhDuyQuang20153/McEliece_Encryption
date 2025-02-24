@@ -1,6 +1,29 @@
+function showError(message, errorBox) {
+    errorBox.classList.add('show'); 
+    errorBox.innerHTML = `<span class="error_detail">${message}</span>`;
+}
+function showErrorSuccess(message, errorBox) {
+    errorBox.classList.add('show'); 
+    errorBox.innerHTML = `<span class="error_detail success_notify">${message}</span>`;
+}
+
+
 //hien thi the div khi da co cipher hoac plain
 function submitForm(event) {
     event.preventDefault();
+    var file = document.getElementById("file-cipher");
+    const errorBox = document.getElementById('err_cipher');
+    errorBox.classList.remove('show'); 
+    errorBox.innerHTML = "";
+    if (!file) {
+        showError("Lỗi: Không tìm thấy input file!", errorBox);
+        return;
+    }
+
+    if (!file.files || file.files.length === 0) {
+        showError("Không có file nào được chọn !", errorBox);
+        return;
+    }
 
     const form = event.target;
     const formData = new FormData(form);
@@ -17,7 +40,6 @@ function submitForm(event) {
     // Đăng ký trình xử lý sự kiện khi yêu cầu hoàn thành
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            // const result = xhr.responseText;
             var response = JSON.parse(xhr.responseText);
             const inp = response.filename_input_1;
             const oup = response.filename_output_1;
@@ -28,6 +50,7 @@ function submitForm(event) {
                 '<div class="filename_left"><p>Input: <span>'+ inp +'</span></p><p>Output: <span>'+ oup +'</span></p></div><div class="download_file"><a href="download-cipher" id="download-cipher"><i class="bx bxs-download"></i> Download</a></div>'  
             
             notify_cipher.innerHTML = '<p>Encrypt data success</p><i class="bx bx-check-circle"></i>';
+            showErrorSuccess("File encryption successful!", errorBox);
             download_file_cipher(); 
         }
     };
@@ -38,6 +61,19 @@ function submitForm(event) {
 
   function submitForm_2(event) {
     event.preventDefault();
+    var file = document.getElementById("file-plain");
+    const errorBox = document.getElementById('err_plain');
+    errorBox.classList.remove('show'); 
+    errorBox.innerHTML = "";
+    if (!file) {
+        showError("Lỗi: Không tìm thấy input file!", errorBox);
+        return;
+    }
+
+    if (!file.files || file.files.length === 0) {
+        showError("Không có file nào được chọn !", errorBox);
+        return;
+    }
 
     const form = event.target;
     const formData = new FormData(form);
@@ -66,6 +102,7 @@ function submitForm(event) {
             '<div class="filename_left"><p>Input: <span>'+ inp +'</span></p><p>Output: <span>'+ oup +'</span></p></div><div class="download_file"><a href="download-plain" id="download-plain"><i class="bx bxs-download"></i> Download</a></div>'  
             
             notify_plain.innerHTML = '<p>Decrypt data success</p><i class="bx bx-check-circle"></i>';
+            showErrorSuccess("File decryption successfully!", errorBox);
             download_file_plain();
         }
     };

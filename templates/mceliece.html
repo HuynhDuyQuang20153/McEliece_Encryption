@@ -33,8 +33,11 @@
                     <div class="side-left side-container" id="process__1">
                         <form action="/cipher" method="post" enctype="multipart/form-data" id="cipher" onsubmit="return submitForm(event)">  
                             <h1>ENCRYPT DATA</h1>
-                            <span>Upload your original data <span class="hide-text">you want to encrypt</span></span>
-                            <span>(Only accept .txt and .xlsx file)</span>
+                            <span>
+                                Upload your original data <span class="hide-text">you want to encrypt</span> 
+                                <br>
+                                (Only accept .txt and .xlsx file)
+                            </span>
                             <div class="click">
                                 <input type="file" name="file" id="file-cipher" accept=".txt, .xlsx">
                                 <div class="row-mc">
@@ -44,20 +47,24 @@
                                         </div>
                                     </button>                                   
                                 </div>
+                                <div class="box_notify_error show" id="err_cipher"></div>
                             </div>
                         </form>
 
                         <div class="show-img" id="show">
                             <i class='bx bx-image-alt' ></i>
-                            <div class="alt_img">McEliece</div>
+                            <!-- <div class="alt_img">McEliece</div> -->
                         </div>
                     </div>
     
                     <div class="side-right side-container">
                         <form action="/plain" method="post" enctype="multipart/form-data" id="plain" onsubmit="return submitForm_2(event)">   
                             <h1>DECRYPT DATA</h1>
-                            <span>Upload your cipher data <span class="hide-text">you want to decrypt</span></span>
-                            <span>(Only accept .txt file)</span>
+                            <span>
+                                Upload your cipher data <span class="hide-text">you want to decrypt</span>
+                                <br>
+                                (Only accept .txt file)
+                            </span>
                             <div class="click">
                                 <input type="file" name="file" accept=".txt" id="file-plain" >
                                 <div class="row-mc">
@@ -66,7 +73,8 @@
                                             <i class='bx bx-loader-circle'></i>
                                         </div>
                                     </button>                                 
-                                </div>                                
+                                </div>  
+                                <div class="box_notify_error show" id="err_plain"></div>                              
                             </div>
                         </form>
                     </div>
@@ -109,8 +117,6 @@
                 <i class='bx bx-x'></i>                
             </div>
         </div>
-
-        <span id="hide-bg"></span>
     </section>
 
     <script src="../static/js/mceliece.js"></script>
